@@ -4,9 +4,12 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
+    "client-install": "yarn --cwd client install",
     "build": "babel src -d dist",
     "start": "babel src -d dist && node dist/server.js",
-    "server": "nodemon dist/server.js"
+    "server": "babel src -d dist && node dist/server.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn start\" \"yarn client\" "
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
