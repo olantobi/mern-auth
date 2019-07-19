@@ -40,8 +40,8 @@ export const setCurrentUser = decoded => {
   return {
     type: SET_CURRENT_USER,
     payload: decoded
-  }
-}
+  };
+};
 
 // User loading
 export const setUserloading = () => {
@@ -57,5 +57,5 @@ export const logoutUser = () => dispatch => {
   // Remove auth header from future requests
   setAuthToken(false);
   // Set current user to empty object {} which will set isAuthenticated to false
-  dispatch(setCurrentUser());
+  dispatch(setCurrentUser({}));
 };
